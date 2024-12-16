@@ -1,0 +1,28 @@
+@model Universiteti2024.Models.Kursi
+
+<h2>Krijo Kurs</h2>
+<div class="border-bottom my-3"></div>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<form asp-action="Krijo" method="post">
+    <div class="form-group mb-2">
+        <label asp-for="EmriKursit"></label>
+        <input asp-for="EmriKursit" class="form-control" />
+        <span asp-validation-for="EmriKursit" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label asp-for="Pershkrimi"></label>
+        <input asp-for="Pershkrimi" class="form-control" />
+        <span asp-validation-for="Pershkrimi" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Krijo</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
